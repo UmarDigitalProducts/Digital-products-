@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Tools | Premium Prompt Packs for Creators & Marketers</title>
+  <meta name="description" content="Premium digital products for content creators and marketers. High-converting prompt packs and templates." />
+  <style>
+    :root {
+      --bg: #070b14;
+      --card: #0f1623;
+      --card-hover: #151e2e;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(7, 11, 20, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span { color: var(--primary); }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 90px 0 70px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.08), transparent 60%);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.15);
+      color: #93c5fd;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5.5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.12;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 .gradient {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 15px 34px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      margin-left: 12px;
+    }
+
+    .btn-secondary:hover {
+      background: var(--card);
+      box-shadow: none;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: all 0.25s;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: #334155;
+      background: var(--card-hover);
+    }
+
+    .product-card.featured {
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .product-card.featured::before {
+      content: "BEST SELLER";
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .product-image {
+      height: 190px;
+      background: linear-gradient(145deg, #1e3a5f 0%, #0f172a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .product-body {
+      padding: 26px;
+    }
+
+    .product-body h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .product-body p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .price span {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .tag {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px 24px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+
+    .feature:hover {
+      border-color: #334155;
+    }
+
+    .feature-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .feature h4 {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 22px;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      font-weight: 750;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      margin-bottom: 30px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 60px 0 50px; }
+      .btn-secondary {
+        display: block;
+        margin: 14px auto 0;
+        width: fit-content;
+      }
+      .cta-box { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Content<span>Tools</span></a>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#features">Benefits</a>
+        <a href="#buy">Buy Now</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Premium Digital Products</div>
+      <h1>Create Better Content<br><span class="gradient">Faster & Easier</span></h1>
+      <p>Ready-to-use prompt packs and templates designed for content creators, marketers, and freelancers who want real results.</p>
+      <a href="#buy" class="btn">Get Instant Access →</a>
+      <a href="#products" class="btn btn-secondary">View Products</a>
+    </div>
+  </section>
+
+  <section class="section" id="products">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <p class="section-subtitle">High-quality digital products that help you work smarter</p>
+
+      <div class="products-grid">
+
+        <div class="product-card featured">
+          <div class="product-image">🚀</div>
+          <div class="product-body">
+            <h3>Ultimate Content Machine</h3>
+            <p>50 high-converting prompts for social media, YouTube, blogs, emails, sales pages & personal branding.</p>
+            <div class="price-row">
+              <div class="price">$19 <span>one-time</span></div>
+              <div class="tag">Instant Download</div>
+            </div>
+            <a href="#buy" class="btn" style="width:100%; text-align:center;">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">🎨</div>
+          <div class="product-body">
+            <h3>Visual Prompt Pack</h3>
+            <p>100+ premium prompts for creating stunning images, product mockups, and social media visuals.</p>
+            <div class="price-row">
+              <div class="price" style="font-size:1.2rem; color:var(--muted);">Coming Soon</div>
+            </div>
+            <a href="#" class="btn btn-secondary" style="width:100%; text-align:center; opacity:0.7;">Notify Me</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">📧</div>
+          <div class="product-body">
+            <h3>Email Swipe File</h3>
+            <p>High-converting email sequences and subject lines for launches, nurturing, and sales campaigns.</p>
+            <div class="price-row">
+              <div class="price" style="font-size:1.2rem; color:var(--muted);">Coming Soon</div>
+            </div>
+            <a href="#" class="btn btn-secondary" style="width:100%; text-align:center; opacity:0.7;">Notify Me</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="section-title">Why Creators Choose Us</h2>
+      <p class="section-subtitle">Built for speed, quality, and real results</p>
+
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h4>Save Hours Weekly</h4>
+          <p>Stop wasting time on blank screens. Copy, paste, and get professional content in minutes.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📈</div>
+          <h4>Proven Frameworks</h4>
+          <p>Every prompt uses battle-tested structures that actually convert and engage audiences.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <h4>Ready to Use</h4>
+          <p>Just copy the prompts, fill in the blanks, and start creating high-quality content immediately.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💼</div>
+          <h4>Commercial License</h4>
+          <p>Use all outputs for client work, your business, or personal brand without restrictions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="buy">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Start Creating Better Content Today</h2>
+        <p>Get the Ultimate Content Machine and write high-converting content in minutes instead of hours.</p>
+        <a href="#" class="btn" id="buy-button">Get Instant Access – $19</a>
+        <p style="margin-top:18px; font-size:0.9rem; color:var(--muted);">Instant download • Commercial use allowed • One-time payment</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Content Tools. All rights reserved.</p>
+      <p style="margin-top:8px; font-size:0.85rem;">Built for creators who want to work smarter.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('buy-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Replace this button with your real product link (Payhip / Gumroad / itch.io)');
+    });
+  </script>
+
+</body>
+</html>
